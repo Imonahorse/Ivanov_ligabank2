@@ -1,0 +1,26 @@
+.logo{
+  width: 149px;
+  height: 37px;
+  flex-shrink: 0;
+
+  @media(max-width: 1023px) {
+    height: 30px;
+    width: 133px;
+  }
+
+  @media(max-width: 767px) {
+    width: 145px;
+    padding-left: 29px;
+
+    img {
+      width: 115px;
+    }
+  }
+}
+
+.menu__open {
+  @media(max-width: 767px) {
+    margin-bottom: 35px;
+    margin-right: 0;
+  }
+}
