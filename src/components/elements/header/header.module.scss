@@ -5,17 +5,17 @@
 .wrapper {
   display: flex;
   padding-top: 15px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 
   @media(max-width: 1023px) {
-    padding-top: 33px;
-    padding-bottom: 28px;
+    padding-top: 4px;
+    padding-bottom: 0;
   }
 
   @media(max-width: 767px) {
     position: relative;
-    padding-top: 17px;
-    padding-bottom: 19px;
+    padding-top: 15px;
+    padding-bottom: 3px;
   }
 }
 

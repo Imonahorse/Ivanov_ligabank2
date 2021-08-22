@@ -1,0 +1,97 @@
+.background {
+  background-image: linear-gradient( to right, var(--gray-6) 30%, #e6f1fe 70%, rgba(#e6f1fe, 0.3));
+}
+
+.wrapper {
+  min-height: 400px;
+  background-image: url('woman-desktop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media(max-width: 1150px) {
+    background-position: 40%;
+  }
+
+  @media(max-width: 1023px) {
+    min-height: 300px;
+    background-position: 66% center;
+  }
+
+  @media(max-width: 767px) {
+    min-height: 226px;
+  }
+}
+
+.info {
+  padding-top: 104px;
+  padding-left: 249px;
+
+  @media(max-width: 1023px) {
+    padding-top: 65px;
+    padding-left: 41px;
+  }
+
+  @media(max-width: 767px) {
+    padding-top: 40px;
+    padding-left: 0;
+  }
+}
+
+.title {
+  margin: 0 0 8px 0;
+  font-size: 54px;
+  font-style: normal;
+  font-weight: bold;
+  color: var(--black);
+
+  @media(max-width: 1023px) {
+    font-size: 46px;
+  }
+
+  @media(max-width: 767px) {
+    font-size: 38px;
+  }
+}
+
+.text {
+  margin: 0 0 34px 0;
+  color: var(--gray-5);
+  font-size: 22px;
+  line-height: 26px;
+
+  @media(max-width: 1023px) {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 28px;
+  }
+
+  @media(max-width: 767px) {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 25px;
+  }
+}
+
+.button {
+  min-width: 234px;
+  padding: 16px 20px 16px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: var(--gray);
+  font-style: normal;
+  text-align: center;
+  color: var(--black);
+  border: none;
+  border-radius: 5px;
+
+  @media(max-width: 1023px) {
+    min-width: 206px;
+    font-size: 16px;
+  }
+
+  @media(max-width: 768px) {
+    min-width: 188px;
+    padding: 13px 23px 14px 20px;
+    font-size: 14px;
+  }
+}
