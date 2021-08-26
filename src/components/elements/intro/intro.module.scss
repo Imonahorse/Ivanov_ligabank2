@@ -1,4 +1,144 @@
-.intro {
-  width: 100vw;
+.wrapper {
+  min-height: 400px;
+  background-repeat: no-repeat;
+  background-position: 50% center;
+  background-size: cover;
+
+  &__cards {
+    background-image: url('./cards-desktop.jpg');
+  }
+
+  &__trust{
+    background-image: url('./man-desktop.jpg');
+  }
+
+  &__security {
+    background-image: url('./woman-desktop.jpg');
+  }
+
+  @media(max-width: 1023px) {
+    min-height: 300px;
+
+    &__cards {
+      background-image: url('./cards-tablet.jpg');
+    }
+
+    &__trust{
+      background-image: url('./man-tablet.jpg');
+    }
+
+    &__security {
+      background-image: url('./woman-tablet.jpg');
+    }
+  }
+
+  @media(max-width: 767px) {
+    min-height: 226px;
+
+    &__cards {
+      background-image: url('./cards-mobile.jpg');
+    }
+
+    &__trust{
+      background-image: url('./man-mobile.jpg');
+    }
+
+    &__security {
+      background-image: url('./woman-mobile.jpg');
+    }
+  }
 }
 
+.info {
+  padding-top: 104px;
+  padding-left: 170px;
+  padding-bottom: 50px;
+
+  @media(max-width: 1023px) {
+    width: 55%;
+    padding-top: 65px;
+    padding-left: 41px;
+  }
+
+  @media(max-width: 767px) {
+    padding-top: 40px;
+    padding-left: 0;
+  }
+}
+
+.title {
+  margin: 0 0 8px 0;
+  font-size: 54px;
+  font-style: normal;
+  font-weight: bold;
+  color: var(--black);
+
+  &__first {
+    color: var(--gray);
+  }
+
+
+  @media(max-width: 1023px) {
+    font-size: 46px;
+  }
+
+  @media(max-width: 767px) {
+    font-size: 38px;
+  }
+}
+
+.text {
+  margin: 0 0 34px 0;
+  color: var(--gray-5);
+  font-size: 22px;
+  line-height: 26px;
+
+  &__first {
+    color: var(--gray);
+  }
+
+
+  @media(max-width: 1023px) {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 28px;
+  }
+
+  @media(max-width: 767px) {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 25px;
+  }
+}
+
+.button {
+  min-width: 234px;
+  padding: 16px 20px 16px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: var(--gray);
+  font-style: normal;
+  text-align: center;
+  color: var(--black);
+  border: none;
+  border-radius: 5px;
+
+  @media(max-width: 1023px) {
+    min-width: 206px;
+    font-size: 17px;
+  }
+
+  @media(max-width: 767px) {
+    min-width: 188px;
+    padding: 13px 23px 14px 20px;
+    font-size: 14px;
+  }
+}
+
+:global(.swiper-pagination) {
+  top: 87%;
+
+  @media(max-width: 1023px) {
+    top: auto;
+  }
+}
