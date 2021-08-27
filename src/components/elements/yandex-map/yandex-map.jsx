@@ -42,14 +42,14 @@ const ZoomControlOptions = {
 };
 const GeolocationControlOptions = {
   RIGHT: '20px',
-  TOP: '2400px',
+  TOP: '240px',
 };
 
 
 function YandexMap() {
   return (
     <section className={styles.map}>
-      <div className='container'>
+      <div className={'container'}>
         <h2 className={styles.title}>Отделения Лига Банка</h2>
         <div className={styles.location}>
           <YMaps>
@@ -71,7 +71,7 @@ function YandexMap() {
               />
               <GeolocationControl options={{
                 position: {
-                  right: GeolocationControlOptions.right,
+                  right: GeolocationControlOptions.RIGHT,
                   top: GeolocationControlOptions.TOP,
                 },
               }}

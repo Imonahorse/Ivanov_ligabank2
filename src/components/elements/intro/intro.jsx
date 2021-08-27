@@ -11,42 +11,46 @@ SwiperCore.use([Pagination, A11y, Autoplay]);
 
 function Intro() {
   return (
-    <Swiper
-      ally
-      slidesPerView={1}
-      pagination={{
-        'clickable': true,
-      }}
-      // autoplay={{delay: 3000}}
-      loop={false}
-    >
-      <SwiperSlide className={cn(styles.wrapper, styles.wrapper__cards)}>
-        <div className='container'>
-          <div className={styles.info}>
-            <h2 className={cn(styles.title, styles.title__first)}>Лига Банк</h2>
-            <p className={cn(styles.text, styles.text__first)}>Кредиты на любой случай</p>
-            <button type='button' className={styles.button}>Рассчитать кредит</button>
+    <section>
+      <h2 className='visually-hidden'>Слайдер с информацией</h2>
+      <Swiper
+        ally
+        slidesPerView={1}
+        pagination={{
+          'clickable': true,
+        }}
+        // autoplay={{delay: 3000}}
+        loop={false}
+        className={styles.swiper}
+      >
+        <SwiperSlide className={cn(styles.wrapper, styles.wrapper__cards)}>
+          <div className='container'>
+            <div className={styles.info}>
+              <h2 className={cn(styles.title, styles.title__first)}>Лига Банк</h2>
+              <p className={cn(styles.text, styles.text__first)}>Кредиты на любой случай</p>
+              <button type='button' className={styles.button}>Рассчитать кредит</button>
+            </div>
           </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className={cn(styles.wrapper, styles.wrapper__trust)}>
-        <div className='container'>
-          <div className={styles.info}>
-            <h2 className={styles.title}>Лига Банк</h2>
-            <p className={styles.text}>Ваша уверенность в завтрашнем дне</p>
+        </SwiperSlide>
+        <SwiperSlide className={cn(styles.wrapper, styles.wrapper__trust)}>
+          <div className='container'>
+            <div className={styles.info}>
+              <h2 className={styles.title}>Лига Банк</h2>
+              <p className={styles.text}>Ваша уверенность в завтрашнем дне</p>
+            </div>
           </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className={cn(styles.wrapper, styles.wrapper__security)}>
-        <div className='container'>
-          <div className={styles.info}>
-            <h2 className={styles.title}>Лига Банк</h2>
-            <p className={styles.text}>Всегда рядом</p>
-            <button type='button' className={styles.button}>Рассчитать кредит</button>
+        </SwiperSlide>
+        <SwiperSlide className={cn(styles.wrapper, styles.wrapper__security)}>
+          <div className='container'>
+            <div className={styles.info}>
+              <h2 className={styles.title}>Лига Банк</h2>
+              <p className={styles.text}>Всегда рядом</p>
+              <button type='button' className={styles.button}>Рассчитать кредит</button>
+            </div>
           </div>
-        </div>
-      </SwiperSlide>
-    </Swiper>
+        </SwiperSlide>
+      </Swiper>
+    </section>
   );
 }
 

@@ -3,18 +3,24 @@ import SiteMenu from '../site-menu/site-menu';
 import styles from './header.module.scss';
 import cn from 'classnames';
 import Logo from '../logo/logo';
+import Modal from '../modal/modal';
 
 function Header() {
   const [menuState, setMenuState] = useState(false);
+  const [modalState, setModalState] = useState(false);
   const mainNav = cn(
     styles.main_nav,
     {[styles.main_nav__open]: menuState},
   );
   const handleMenuClick = () => setMenuState(true);
   const handleCloseClick = () => setMenuState(false);
+  const handleModalClick = () => {
+    setModalState((prev)=> !prev);
+  };
 
   return (
     <header className={styles.page_header}>
+      {modalState && <Modal handleModalClick={handleModalClick} modalState={modalState}/>}
       <div className={cn('container', styles.wrapper)}>
         <nav
           className={mainNav}
@@ -52,6 +58,7 @@ function Header() {
                 className={styles.user_menu__link}
                 href='/#'
                 aria-label='Войти в личный кабинет'
+                onClick={handleModalClick}
               >
                 <svg
                   width='20'

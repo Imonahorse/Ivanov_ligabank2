@@ -15,7 +15,7 @@ function Main() {
         <Services/>
         <YandexMap/>
       </main>
-      <Footer/>
+      {/*<Footer/>*/}
     </body>
   );
 }
