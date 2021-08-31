@@ -45,7 +45,6 @@ const GeolocationControlOptions = {
   TOP: '240px',
 };
 
-
 function YandexMap() {
   return (
     <section className={styles.map}>
