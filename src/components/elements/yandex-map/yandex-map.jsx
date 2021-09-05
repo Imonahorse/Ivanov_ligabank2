@@ -4,7 +4,7 @@ import styles from './yandex-map.module.scss';
 import icon from './location.svg';
 
 const Default = {
-  CENTER_LOCATION: [55.304138, 55.932631],
+  CENTER_LOCATION: [57.064630, 60.736963],
   ZOOM: 5,
   WIDTH: '100%',
   HEIGHT: '100%',
@@ -34,12 +34,26 @@ const markers = [
     city: 'Тюмень',
     location: [57.152985, 65.541227],
   },
+  {
+    city: 'Сургут',
+    location: [61.25, 73.41667],
+  },
+  {
+    city: 'Новосибирск',
+    location: [55.0415, 82.9346],
+  },
+  {
+    city: 'Пермь',
+    location: [58.01046, 56.25017],
+  },
 ];
+
 const ZoomControlOptions = {
   RIGHT: '20px',
   TOP: '150px',
   SIZE: 'small',
 };
+
 const GeolocationControlOptions = {
   RIGHT: '20px',
   TOP: '240px',
@@ -47,7 +61,7 @@ const GeolocationControlOptions = {
 
 function YandexMap() {
   return (
-    <section className={styles.map}>
+    <section className={styles.map} id='address'>
       <div className={'container'}>
         <h2 className={styles.title}>Отделения Лига Банка</h2>
         <div className={styles.location}>

@@ -6,7 +6,7 @@
   :global(.swiper-pagination-bullet) {
     width: 10px;
     height: 10px;
-    background-color: #2028B6;
+    background-color: var(--blue-4);
   }
 
   :global(.swiper-pagination-bullet-active) {
@@ -24,52 +24,48 @@
 
 .wrapper {
   min-height: 400px;
-  background-repeat: no-repeat;
-  background-position: 50% center;
-  background-color: var(--blue);
 
   &__cards {
-    background-image: url('./cards-desktop.jpg');
+    background: url('./cards-desktop.jpg') 50% center no-repeat, var(--blue);
   }
 
-  &__trust{
-    background-image: url('./man-desktop.jpg');
+  &__trust {
+    background: url('./man-desktop.jpg') 50% center no-repeat, linear-gradient(to right, var(--gray-6), var(--gray-7));
   }
 
   &__security {
-    background-image: url('./woman-desktop.jpg');
+    background: url('./woman-desktop.jpg') 50% center no-repeat, linear-gradient(to right, var(--blue-5), var(--blue-5));
   }
 
   @media(max-width: 1023px) {
     min-height: 300px;
 
     &__cards {
-      background-image: url('./cards-tablet.jpg');
+      background: url('./cards-tablet.jpg') 50% center no-repeat, var(--blue);
     }
 
-    &__trust{
-      background-image: url('./man-tablet.jpg');
+    &__trust {
+      background: url('./man-tablet.jpg') 50% center no-repeat, linear-gradient(to right, var(--gray-6), var(--gray-7));
     }
 
     &__security {
-      background-image: url('./woman-tablet.jpg');
+      background: url('./woman-tablet.jpg') 50% center no-repeat, linear-gradient(to right, var(--blue-5), var(--blue-5));
     }
   }
 
   @media(max-width: 767px) {
     min-height: 226px;
-    background-position: 100% center;
 
     &__cards {
-      background-image: url('./cards-mobile.jpg');
+      background: url('./cards-mobile.jpg') 100% center no-repeat, var(--blue);
     }
 
-    &__trust{
-      background-image: url('./man-mobile.jpg');
+    &__trust {
+      background: url('./man-mobile.jpg') 100% center no-repeat, linear-gradient(to right, var(--gray-6), var(--gray-7));
     }
 
     &__security {
-      background-image: url('./woman-mobile.jpg');
+      background: url('./woman-mobile.jpg') 50% center no-repeat, linear-gradient(to right, var(--blue-5), var(--blue-5));
     }
   }
 }
@@ -94,6 +90,7 @@
 
 .title {
   margin: 0 0 8px 0;
+
   font-size: 54px;
   font-style: normal;
   font-weight: bold;
@@ -115,6 +112,7 @@
 
 .text {
   margin: 0 0 34px 0;
+
   color: var(--gray-5);
   font-size: 22px;
   line-height: 26px;
@@ -125,38 +123,42 @@
 
 
   @media(max-width: 1023px) {
+    margin-bottom: 28px;
+
     font-size: 18px;
     line-height: 21px;
-    margin-bottom: 28px;
   }
 
   @media(max-width: 767px) {
+    margin-bottom: 25px;
+
     font-size: 16px;
     line-height: 19px;
-    margin-bottom: 25px;
   }
 }
 
 .button {
   min-width: 234px;
   padding: 16px 20px 16px 20px;
+
   font-size: 18px;
   font-weight: 500;
-  background-color: var(--gray);
-  font-style: normal;
-  text-align: center;
-  color: var(--black);
-  border: none;
-  border-radius: 5px;
+
+  &__white {
+    background-color: var(--gray);
+    color: var(--black);
+  }
 
   @media(max-width: 1023px) {
     min-width: 206px;
+
     font-size: 17px;
   }
 
   @media(max-width: 767px) {
     min-width: 188px;
     padding: 13px 23px 14px 20px;
+
     font-size: 14px;
   }
 }

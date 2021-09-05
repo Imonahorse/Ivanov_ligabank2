@@ -4,6 +4,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 const Buttons = ['Услуги','Рассчитать кредит', 'Конвертер валют', 'Контакты'];
+const footerButtons = ['Услуги', 'Рассчитать кредит', 'Контакты', 'Задать вопрос'];
 
 function SiteMenu({className, menuState, isFooter}) {
   const listClass = cn(
@@ -16,11 +17,12 @@ function SiteMenu({className, menuState, isFooter}) {
     styles.item,
     {[styles.item__footer]: isFooter},
   );
+  const buttons = isFooter ? footerButtons : Buttons;
 
   return (
     <ul className={listClass}>
       {
-        Buttons.map((button) => (
+        buttons.map((button) => (
           <li className={itemClass} key={button}>
             <a className={styles.link} href="/#">{button}</a>
           </li>

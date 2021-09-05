@@ -22,6 +22,11 @@
   @media(max-width: 767px) {
     display: none;
     width: 100%;
+
+    &__footer {
+      display: block;
+      margin-bottom: 12px;
+    }
   }
 }
 
@@ -33,10 +38,11 @@
 }
 
 .item {
-  font-size: 16px;
   padding-top: 20px;
   padding-bottom: 20px;
   margin-right: 25px;
+
+  font-size: 16px;
 
   &:last-child {
     margin-right: 0;
@@ -47,6 +53,7 @@
     margin-right: 0;
     padding-top: 0;
     padding-bottom: 0;
+
     font-weight: 500;
   }
 
@@ -60,20 +67,26 @@
   }
 
   @media(max-width: 767px) {
-    font-size: 16px;
     margin-right: 0;
     padding: 22px 10px 18px 15px;
+
+    font-size: 16px;
     border-top: 1px solid var(--gray-4);
     border-bottom: 1px solid var(--gray-4);
+
+    &__footer {
+      padding: 0;
+
+      border: none;
+      font-size: 15px;
+    }
   }
 }
 
 .link {
-  &:hover {
-    color: var(--blue);
-  }
+  outline-color: var(--blue);;
 
-  &:focus {
+  &:hover {
     color: var(--blue);
   }
 }

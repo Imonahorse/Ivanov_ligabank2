@@ -15,7 +15,7 @@ function Header() {
   const handleMenuClick = () => setMenuState(true);
   const handleCloseClick = () => setMenuState(false);
   const handleModalClick = () => {
-    setModalState((prev)=> !prev);
+    setModalState((prev) => !prev);
   };
 
   return (
@@ -31,7 +31,7 @@ function Header() {
             aria-label='Кнопка открытия меню'
             onClick={handleMenuClick}
           >
-            <span className="visually-hidden">
+            <span className='visually-hidden'>
               Открыть меню
             </span>
           </button>
@@ -40,7 +40,7 @@ function Header() {
             aria-label='Кнопка закрытия меню'
             onClick={handleCloseClick}
           >
-            <span className="visually-hidden">
+            <span className='visually-hidden'>
               Закрыть меню
             </span>
           </button>
@@ -64,8 +64,6 @@ function Header() {
                   width='20'
                   height='22'
                   viewBox='0 0 20 22'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
                   aria-hidden='true'
                 >
                   <path

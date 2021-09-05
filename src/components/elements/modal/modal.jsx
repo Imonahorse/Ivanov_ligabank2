@@ -4,8 +4,9 @@ import logo from './logo-modal.svg';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
+import Button from '../button/button';
 
-const MIN_LENGTH = 1;
+ReactModal.setAppElement('#root');
 
 const Inputs = {
   LOGIN: 'login',
@@ -19,21 +20,12 @@ function Modal({handleModalClick, modalState}) {
   const [isVisiblePassword, setIsVisiblePassword] = useState(false);
   const [form, setForm] = useState(initialStorage);
 
-  const isValid = form[Inputs.LOGIN].length >= MIN_LENGTH && form[Inputs.PASSWORD].length >= MIN_LENGTH;
-
   useEffect(() => {
     localStorage.setItem('form', JSON.stringify(form));
   }, [form]);
 
   const handleSubmitClick = (evt) => {
     evt.preventDefault();
-
-    const login = form[Inputs.LOGIN];
-    const password = form[Inputs.PASSWORD];
-
-    if (!login && !password) {
-      return;
-    }
 
     localStorage.clear();
     handleModalClick();
@@ -99,6 +91,7 @@ function Modal({handleModalClick, modalState}) {
               name='login'
               value={form[Inputs.LOGIN]}
               onChange={handleInputChange}
+              required
             />
           </label>
           <label className={styles.label}>
@@ -109,12 +102,15 @@ function Modal({handleModalClick, modalState}) {
               name='password'
               value={form[Inputs.PASSWORD]}
               onChange={handleInputChange}
+              required
             />
             <button
               aria-label='Сделать пароль видимым'
               type='button'
               className={styles.password_view}
-              onClick={() => setIsVisiblePassword((prev) => !prev)}
+              onMouseDown={() => setIsVisiblePassword(true)}
+              onMouseUp={() => setIsVisiblePassword(false)}
+              onMouseLeave={() => setIsVisiblePassword(false)}
             >
             </button>
           </label>
@@ -124,14 +120,13 @@ function Modal({handleModalClick, modalState}) {
           >
             Забыли пароль?
           </a>
-          <button
+          <Button
             type='submit'
             className={styles.submit}
             aria-label='Кнопка отправить данные'
-            disabled={!isValid}
           >
             Войти
-          </button>
+          </Button>
         </form>
       </section>
     </ReactModal>

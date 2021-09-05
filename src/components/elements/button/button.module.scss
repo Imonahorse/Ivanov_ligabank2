@@ -1,0 +1,30 @@
+.button {
+  display: inline-block;
+
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+  background-color: var(--blue);
+  color: var(--white);
+
+  &:hover {
+    background-color: var(--blue-2);
+  }
+
+  &:disabled {
+    background-color: var(--gray-4);
+    color: var(--white);
+    cursor: auto;
+  }
+}
+
+.white {
+    background-color: var(--white);
+    color: var(--black);
+
+  &:hover {
+    background-color: var(--gray-6);
+  }
+}

@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, {Navigation, Thumbs, Pagination} from 'swiper';
+import SwiperCore, {Navigation, Thumbs, Pagination, A11y} from 'swiper';
+import styles from './services.module.scss';
+import cn from 'classnames';
+import Button from '../button/button';
 
 import 'swiper/swiper.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/thumbs/thumbs.scss';
-import styles from './services.module.scss';
-import cn from 'classnames';
+import 'swiper/components/a11y/a11y.scss';
 
-
-SwiperCore.use([Navigation, Thumbs, Pagination]);
+SwiperCore.use([Navigation, Thumbs, Pagination, A11y]);
 
 function Services() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -38,7 +39,7 @@ function Services() {
         </Swiper>
         <Swiper
           thumbs={{swiper: thumbsSwiper}}
-          pagination={{clickable: true}}
+          pagination
           className={styles.pagination}
         >
           <SwiperSlide className={cn(styles.wrapper, styles.wrapper__piggybank)}>
@@ -49,7 +50,7 @@ function Services() {
                 <li className={styles.item}>Разнообразные условия</li>
                 <li className={styles.item}>Возможность ежемесячной капитализации или вывод процентов на банковскую карту</li>
               </ul>
-              <button type='button' className={styles.button}>Узнать подробнее</button>
+              <Button type='button' className={styles.button}>Узнать подробнее</Button>
             </div>
           </SwiperSlide>
           <SwiperSlide className={cn(styles.wrapper, styles.wrapper__car)}>
@@ -60,7 +61,9 @@ function Services() {
                 <li className={styles.item}>Автокредит</li>
                 <li className={styles.item}>Потребительский кредит</li>
               </ul>
-              <p className={styles.additional}>Рассчитайте ежемесячный платеж и ставку по кредиту воспользовавшись нашим кредитным калькулятором</p>
+              <p className={styles.additional}>Рассчитайте ежемесячный платеж и ставку по кредиту воспользовавшись
+                нашим <a className={styles.link} href='#calculator'>кредитным калькулятором</a>.
+              </p>
             </div>
           </SwiperSlide>
           <SwiperSlide className={cn(styles.wrapper, styles.wrapper__security)}>
@@ -71,17 +74,17 @@ function Services() {
                 <li className={styles.item}>Страхование жизни и здоровья</li>
                 <li className={styles.item}>Страхование недвижимости</li>
               </ul>
-              <button type='button' className={styles.button}>Узнать подробнее</button>
+              <Button type='button' className={styles.button}>Узнать подробнее</Button>
             </div>
           </SwiperSlide>
           <SwiperSlide className={cn(styles.wrapper, styles.wrapper__phone)}>
             <div className={styles.info}>
               <h3 className={styles.title}>Лига Банк — это огромное количество онлайн-сервисов для вашего удобства</h3>
               <ul className={styles.list}>
-                <li className={styles.item}>Мобильный банк,<br /> который всегда под рукой</li>
+                <li className={styles.item}>Мобильный банк,<br/> который всегда под рукой</li>
                 <li className={styles.item}>Приложение Лига-проездной позволит вам оплачивать билеты по всему миру</li>
               </ul>
-              <button type='button' className={styles.button}>Узнать подробнее</button>
+              <Button type='button' className={styles.button}>Узнать подробнее</Button>
             </div>
           </SwiperSlide>
         </Swiper>

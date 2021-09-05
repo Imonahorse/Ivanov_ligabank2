@@ -28,8 +28,8 @@ Logo.propTypes = {
 };
 
 Logo.defaultProps = {
-  menuState: '',
-  className: false,
+  menuState: false,
+  className: '',
 };
 
 export default Logo;
