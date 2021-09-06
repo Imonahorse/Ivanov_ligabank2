@@ -5,7 +5,12 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import {Purpose, makeInputString, makeInputNumber} from '../../../const';
 
-const MINIMAL_LOAN_VALUE = 500000;
+
+const minimalAmount = {
+  [Purpose.MORTGAGE]: 500000,
+  [Purpose.CAR]: 200000,
+};
+
 const MATERNAL_CAPITAL = 470000;
 const MORTGAGE_BORDER = 15;
 const CAR_BORDER = 2000000;
@@ -24,16 +29,16 @@ const CAR_RATE = {
 const getAmount = (price, payment, capital) => price - payment - (capital ? MATERNAL_CAPITAL : 0);
 const getMortgageRate = (paymentRange) => paymentRange > MORTGAGE_BORDER ? MORTGAGE_RATE.SMALL : MORTGAGE_RATE.DEFAULT;
 const getCarRate = (price, casco, insurance) => {
-  if(casco && insurance) {
+  if (casco && insurance) {
     return CAR_RATE.CASCO_AND_INSURANCE;
   }
-  if(casco || insurance) {
+  if (casco || insurance) {
     return CAR_RATE.CASCO_OR_INSURANCE;
   }
-  if(price < CAR_BORDER) {
+  if (price < CAR_BORDER) {
     return CAR_RATE.DEFAULT;
   }
-  if(price >= CAR_BORDER) {
+  if (price >= CAR_BORDER) {
     return CAR_RATE.SMALL;
   }
 };
@@ -64,7 +69,7 @@ function Offer({creditState, setBidState}) {
   return (
     <>
       {
-        mortgage >= MINIMAL_LOAN_VALUE &&
+        mortgage >= minimalAmount[purpose] &&
         <div className={styles.offer}>
           <h3 className={styles.title}>Наше предложение</h3>
           <ul className={styles.list}>
@@ -95,10 +100,11 @@ function Offer({creditState, setBidState}) {
         </div>
       }
       {
-        mortgage < MINIMAL_LOAN_VALUE &&
+        mortgage < minimalAmount[purpose] &&
         <div className={styles.offer}>
           <p className={cn(styles.title, styles.error)}>
-            Наш банк не выдает {purpose === Purpose.MORTGAGE ? 'ипотечные кредиты' : 'автокредиты'} меньше 200 000 рублей.
+            Наш банк не
+            выдает {purpose === Purpose.MORTGAGE ? 'ипотечные кредиты' : 'автокредиты'} меньше {minimalAmount[purpose]} рублей.
           </p>
           <p className={styles.term}>
             Попробуйте использовать другие параметры для расчета.

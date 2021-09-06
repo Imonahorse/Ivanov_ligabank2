@@ -16,14 +16,16 @@ function Intro() {
       <h2 className='visually-hidden'>Слайдер с информацией</h2>
       <Swiper
         slidesPerView={1}
-        pagination={{
-          'clickable': true,
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         }}
-        autoplay={{delay: 3000}}
-        loop
         className={styles.swiper}
+        a11y
+        pagination={{'clickable': true}}
       >
-        <SwiperSlide className={cn(styles.wrapper, styles.wrapper__cards)}>
+        <SwiperSlide className={cn(styles.wrapper, styles.wrapper__cards)} tabIndex='0'>
           <div className='container'>
             <div className={styles.info}>
               <h2 className={cn(styles.title, styles.title__first)}>Лига Банк</h2>
@@ -32,7 +34,7 @@ function Intro() {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className={cn(styles.wrapper, styles.wrapper__trust)}>
+        <SwiperSlide className={cn(styles.wrapper, styles.wrapper__trust)} tabIndex='0'>
           <div className='container'>
             <div className={styles.info}>
               <h2 className={styles.title}>Лига Банк</h2>
@@ -40,7 +42,7 @@ function Intro() {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className={cn(styles.wrapper, styles.wrapper__security)}>
+        <SwiperSlide className={cn(styles.wrapper, styles.wrapper__security)} tabIndex='0'>
           <div className='container'>
             <div className={styles.info}>
               <h2 className={styles.title}>Лига Банк</h2>

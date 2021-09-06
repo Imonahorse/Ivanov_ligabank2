@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styles from './bid.module.scss';
 import Button from '../button/button';
+import InputMask from 'react-input-mask';
 import PropTypes from 'prop-types';
 
 const InputsName = {
@@ -70,7 +71,10 @@ function Bid({number, creditState}) {
           onChange={handleInputChange}
         />
         <label className='visually-hidden' htmlFor={InputsName.TEL}>Введите телефон</label>
-        <input
+        <InputMask
+          mask={'+7(999) 999 99 99'}
+          maskChar={' '}
+          minLength={11}
           className={styles.input}
           name={InputsName.TEL}
           id={InputsName.TEL}

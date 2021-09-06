@@ -21,7 +21,6 @@
   }
 }
 
-
 .wrapper {
   min-height: 400px;
 
@@ -63,7 +62,7 @@
     background-size: cover;
 
     &__security {
-      background: url('./woman-mobile.jpg') 65% center no-repeat, linear-gradient(to right, var(--blue-5), var(--blue-5));
+      background: url('./woman-mobile.jpg') right center no-repeat, linear-gradient(to right, var(--blue-5), var(--blue-5));
     }
   }
 
