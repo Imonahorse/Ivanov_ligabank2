@@ -55,6 +55,20 @@
 
   @media(max-width: 767px) {
     min-height: 226px;
+    background-size: contain;
+  }
+
+  @media(max-width: 600px) {
+    min-height: 226px;
+    background-size: cover;
+
+    &__security {
+      background: url('./woman-mobile.jpg') 65% center no-repeat, linear-gradient(to right, var(--blue-5), var(--blue-5));
+    }
+  }
+
+  @media(max-width: 320px) {
+    min-height: 226px;
 
     &__cards {
       background: url('./cards-mobile.jpg') 100% center no-repeat, var(--blue);
@@ -74,7 +88,7 @@
   width: 55%;
   padding-top: 104px;
   padding-left: 170px;
-  padding-bottom: 50px;
+  padding-bottom: 48px;
 
   @media(max-width: 1023px) {
     padding-top: 65px;

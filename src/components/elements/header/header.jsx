@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import SiteMenu from '../site-menu/site-menu';
 import styles from './header.module.scss';
 import cn from 'classnames';
@@ -8,19 +8,34 @@ import Modal from '../modal/modal';
 function Header() {
   const [menuState, setMenuState] = useState(false);
   const [modalState, setModalState] = useState(false);
+
+  useEffect(() => {
+    if (menuState) {
+      document.body.classList.add(styles.open);
+    }
+
+    return () => {
+      document.body.classList.remove(styles.open);
+    };
+  }, [menuState]);
+
   const mainNav = cn(
     styles.main_nav,
     {[styles.main_nav__open]: menuState},
   );
-  const handleMenuClick = () => setMenuState(true);
+  const handleMenuClick = () => setMenuState((prev) => !prev);
   const handleCloseClick = () => setMenuState(false);
-  const handleModalClick = () => {
-    setModalState((prev) => !prev);
-  };
+  const handleModalClick = () => setModalState((prev) => !prev);
 
   return (
     <header className={styles.page_header}>
-      {modalState && <Modal handleModalClick={handleModalClick} modalState={modalState}/>}
+      {
+        modalState &&
+        <Modal
+          handleModalClick={handleModalClick}
+          modalState={modalState}
+        />
+      }
       <div className={cn('container', styles.wrapper)}>
         <nav
           className={mainNav}
@@ -53,9 +68,9 @@ function Header() {
             menuState={menuState}
           />
           <ul className={styles.user_menu}>
-            <li className={styles.user_menu__item}>
+            <li className={styles.item}>
               <a
-                className={styles.user_menu__link}
+                className={styles.link}
                 href='/#'
                 aria-label='Войти в личный кабинет'
                 onClick={handleModalClick}
