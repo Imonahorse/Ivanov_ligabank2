@@ -3,7 +3,7 @@ import styles from './site-menu.module.scss';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-const Buttons = ['Услуги','Рассчитать кредит', 'Конвертер валют', 'Контакты'];
+const Buttons = ['Услуги', 'Рассчитать кредит', 'Конвертер валют', 'Контакты'];
 const footerButtons = ['Услуги', 'Рассчитать кредит', 'Контакты', 'Задать вопрос'];
 
 function SiteMenu({className, menuState, isFooter}) {
@@ -17,14 +17,34 @@ function SiteMenu({className, menuState, isFooter}) {
     styles.item,
     {[styles.item__footer]: isFooter},
   );
+  const link = (button) => {
+    switch (button) {
+      case 'Услуги':
+        return '#services';
+      case 'Рассчитать кредит':
+        return '#calculator';
+      case 'Контакты':
+        return '#address';
+      default:
+        return '/#';
+    }
+  };
   const buttons = isFooter ? footerButtons : Buttons;
 
   return (
     <ul className={listClass}>
       {
         buttons.map((button) => (
-          <li className={itemClass} key={button}>
-            <a className={styles.link} href="/#">{button}</a>
+          <li
+            className={itemClass}
+            key={button}
+          >
+            <a
+              className={styles.link}
+              href={link(button)}
+            >
+              {button}
+            </a>
           </li>
         ))
       }
