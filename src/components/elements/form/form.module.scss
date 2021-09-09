@@ -147,6 +147,34 @@
   background-color: var(--gray-2);
   cursor: pointer;
 
+  &::-webkit-slider-thumb {
+    background-color: var(--blue);
+  }
+
+  &::-webkit-slider-runnable-track {
+    height: 1px;
+    background-color: var(--gray-2);
+  }
+
+  &::-moz-range-thumb {
+    background-color: var(--blue);
+    border:none;
+  }
+
+  &::-moz-range-track {
+    height: 1px;
+    background-color: var(--gray-2);
+  }
+
+  &::-ms-thumb {
+    background-color: var(--blue);
+  }
+
+  &::-ms-track {
+    height: 1px;
+    background-color: var(--gray-2);
+  }
+
   @media(max-width: 767px) {
     margin-bottom: 12px;
   }

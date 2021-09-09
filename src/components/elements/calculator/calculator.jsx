@@ -47,6 +47,7 @@ function Calculator() {
             purpose={creditState.purpose}
             setCreditState={setCreditState}
             setFormState={setFormState}
+            setBidState={setBidState}
           />
           {
             formState &&

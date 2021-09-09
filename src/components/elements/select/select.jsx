@@ -10,13 +10,17 @@ const titles = {
   [Purpose.CAR]: 'Автомобильное кредитование',
 };
 
-function Select({purpose, setCreditState, setFormState}) {
+function Select({purpose, setCreditState, setFormState, setBidState}) {
   const [isOpen, setOpen] = useState(false);
 
   const closeSelect = (value) => {
     setOpen(false);
     setCreditState((prev) => ({...prev, purpose: value}));
     setFormState(true);
+
+    if (purpose !== value) {
+      setBidState(false);
+    }
   };
 
   const handleClick = (evt) => {
@@ -80,6 +84,7 @@ Select.propTypes = {
   purpose: PropTypes.string.isRequired,
   setCreditState: PropTypes.func.isRequired,
   setFormState: PropTypes.func.isRequired,
+  setBidState: PropTypes.func.isRequired,
 };
 
 export default Select;
