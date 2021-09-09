@@ -2,6 +2,7 @@ import React from 'react';
 import {YMaps, Map, Placemark, ZoomControl, GeolocationControl} from 'react-yandex-maps';
 import styles from './yandex-map.module.scss';
 import icon from './location.svg';
+import {useInView} from 'react-intersection-observer';
 
 const Default = {
   CENTER_LOCATION: [57.064630, 60.736963],
@@ -60,51 +61,58 @@ const GeolocationControlOptions = {
 };
 
 function YandexMap() {
+  const [ref, inView] = useInView({
+    threshold: 0,
+  });
+
   return (
-    <section className={styles.map} id='address'>
+    <section ref={ref} className={styles.map} id='address'>
       <div className={'container'}>
         <h2 className={styles.title}>Отделения Лига Банка</h2>
         <div className={styles.location}>
-          <YMaps>
-            <Map
-              width={Default.WIDTH}
-              height={Default.HEIGHT}
-              defaultState={{
-                center: Default.CENTER_LOCATION,
-                zoom: Default.ZOOM,
-              }}
-            >
-              <ZoomControl options={{
-                position: {
-                  right: ZoomControlOptions.RIGHT,
-                  top: ZoomControlOptions.TOP,
-                },
-                size: ZoomControlOptions.SIZE,
-              }}
-              />
-              <GeolocationControl options={{
-                position: {
-                  right: GeolocationControlOptions.RIGHT,
-                  top: GeolocationControlOptions.TOP,
-                },
-              }}
-              />
-              {
-                markers.map((marker) => (
-                  <Placemark
-                    key={marker.city}
-                    geometry={marker.location}
-                    options={{
-                      iconLayout: 'default#image',
-                      iconImageHref: icon,
-                      iconImageSize: DefaultMarker.SIZE,
-                      iconImageOffset: DefaultMarker.OFFSET,
-                    }}
-                  />
-                ))
-              }
-            </Map>
-          </YMaps>
+          {
+            inView &&
+            <YMaps>
+              <Map
+                width={Default.WIDTH}
+                height={Default.HEIGHT}
+                defaultState={{
+                  center: Default.CENTER_LOCATION,
+                  zoom: Default.ZOOM,
+                }}
+              >
+                <ZoomControl options={{
+                  position: {
+                    right: ZoomControlOptions.RIGHT,
+                    top: ZoomControlOptions.TOP,
+                  },
+                  size: ZoomControlOptions.SIZE,
+                }}
+                />
+                <GeolocationControl options={{
+                  position: {
+                    right: GeolocationControlOptions.RIGHT,
+                    top: GeolocationControlOptions.TOP,
+                  },
+                }}
+                />
+                {
+                  markers.map((marker) => (
+                    <Placemark
+                      key={marker.city}
+                      geometry={marker.location}
+                      options={{
+                        iconLayout: 'default#image',
+                        iconImageHref: icon,
+                        iconImageSize: DefaultMarker.SIZE,
+                        iconImageOffset: DefaultMarker.OFFSET,
+                      }}
+                    />
+                  ))
+                }
+              </Map>
+            </YMaps>
+          }
         </div>
       </div>
     </section>
