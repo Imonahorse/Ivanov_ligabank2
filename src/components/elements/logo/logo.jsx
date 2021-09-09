@@ -16,7 +16,7 @@ function Logo({className, menuState}) {
     <div className={divClass}>
       <picture>
         <source media='(max-width: 767px)' srcSet={logoMobile}/>
-        <img src={logo} alt="Логотип банка"/>
+        <img width='150' height='25' src={logo} alt="Логотип банка"/>
       </picture>
     </div>
   );

@@ -27,7 +27,7 @@ const CAR_RATE = {
 };
 
 const getAmount = (price, payment, capital) => price - payment - (capital ? MATERNAL_CAPITAL : 0);
-const getMortgageRate = (paymentRange) => paymentRange > MORTGAGE_BORDER ? MORTGAGE_RATE.SMALL : MORTGAGE_RATE.DEFAULT;
+const getMortgageRate = (paymentRange) => paymentRange >= MORTGAGE_BORDER ? MORTGAGE_RATE.SMALL : MORTGAGE_RATE.DEFAULT;
 const getCarRate = (price, casco, insurance) => {
   if (casco && insurance) {
     return CAR_RATE.CASCO_AND_INSURANCE;

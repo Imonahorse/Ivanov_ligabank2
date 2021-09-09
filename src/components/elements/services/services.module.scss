@@ -28,19 +28,19 @@
   background-position: 82.5% center;
 
   &__piggybank {
-    background-image: url('piggybank.png');
+    background-image: url('piggybank.jpg');
   }
 
   &__car {
-    background-image: url('car.png');
+    background-image: url('car.jpg');
   }
 
   &__phone {
-    background-image: url('phone.png');
+    background-image: url('phone.jpg');
   }
 
   &__security {
-    background-image: url('security.png');
+    background-image: url('security.jpg');
   }
 
   @media(max-width: 1023px) {
@@ -50,19 +50,19 @@
     background-position: 90.5% center;
 
     &__piggybank {
-      background-image: url('piggybank-tablet.png');
+      background-image: url('piggybank-tablet.jpg');
     }
 
     &__car {
-      background-image: url('car-tablet.png');
+      background-image: url('car-tablet.jpg');
     }
 
     &__phone {
-      background-image: url('phone-tablet.png');
+      background-image: url('phone-tablet.jpg');
     }
 
     &__security {
-      background-image: url('security-tablet.png');
+      background-image: url('security-tablet.jpg');
     }
   }
 
@@ -73,19 +73,19 @@
     background-position: 100% 39%;
 
     &__piggybank {
-      background-image: url('piggybank-mobile.png');
+      background-image: url('piggybank-mobile.jpg');
     }
 
     &__car {
-      background-image: url('car-mobile.png');
+      background-image: url('car-mobile.jpg');
     }
 
     &__phone {
-      background-image: url('phone-mobile.png');
+      background-image: url('phone-mobile.jpg');
     }
 
     &__security {
-      background-image: url('security-mobile.png');
+      background-image: url('security-mobile.jpg');
     }
   }
 }

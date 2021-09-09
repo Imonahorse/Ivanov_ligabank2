@@ -68,6 +68,7 @@
   font-weight: 500;
   font-size: 18px;
   outline-color: var(--blue);
+  cursor: pointer;
 
   &:focus {
     border-color: var(--blue);
@@ -103,6 +104,7 @@
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 
   &:focus {
     outline-color: var(--blue);
@@ -143,6 +145,7 @@
   margin: 20px 0 10px 0;
   height: 1px;
   background-color: var(--gray-2);
+  cursor: pointer;
 
   @media(max-width: 767px) {
     margin-bottom: 12px;
@@ -164,6 +167,7 @@
 .checkbox {
   display: flex;
   align-items: baseline;
+  cursor: pointer;
 
   input {
     width: 17px;

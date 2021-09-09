@@ -3,6 +3,7 @@ import styles from './bid.module.scss';
 import Button from '../button/button';
 import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
+import {Purpose} from '../../../const';
 
 const InputsName = {
   NAME: 'name',
@@ -44,7 +45,7 @@ function Bid({number, creditState}) {
           <dd className={styles.definition}>{creditState.purpose}</dd>
         </div>
         <div className={styles.dl}>
-          <dt className={styles.term}>Стоимость недвижимости</dt>
+          <dt className={styles.term}>Стоимость {creditState.purpose === Purpose.MORTGAGE ? 'недвижимости' : 'автомобиля'}</dt>
           <dd className={styles.definition}>{creditState.price}</dd>
         </div>
         <div className={styles.dl}>
